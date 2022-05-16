@@ -7,25 +7,25 @@ const sql = "SELECT * FROM information"
 
 // sql conneciton
 var conneciton = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  database: "BIENEN",
-  user: "J2",
-  password: "J2"
+    host: "localhost",
+    port: 3306,
+    database: "BIENEN",
+    user: "J2",
+    password: "J2"
 });
 
 var server = http.createServer(function (request, response) {
-    console.log(request.method)
-    switch (request.url) {
-        case '/':
-            response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
-            loadData()
-            response.write(loadData())
-            response.end()
-            break
-        default:
-            response.end('Invalid Request')
-    }
+    if (request.method == "GET") {
+        switch (request.url) {
+            case '/':
+                response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
+                response.write(loadData())
+                response.end()
+                break
+            default:
+                response.end('Invalid Request')
+        }
+    } else response.end('Invalid Request')
 })
 
 //run
@@ -35,13 +35,13 @@ console.log('localhost:' + port)
 
 function loadData() {
     conneciton.query(sql, function (err, result) {
-      if (err) throw err
-      console.log(result)
-      return result.toString()
+        if (err) throw err
+        console.log(result)
+        return result.toString()
     });
 }
-  
+
 conneciton.connect(function (err) {
     if (err) throw err
     console.log('Connected to database')
-  });
+});
