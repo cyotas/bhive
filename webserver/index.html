@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <p>Test</p>
+    </body>
+    <script>
+        fetch("http://pi-0:3033")
+        .then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data)
+        })
+    </script>
+</html>
