@@ -7,7 +7,7 @@ const port = 2022
 var server = http.createServer(function (request, response) {
     switch (request.url) {
         case '/':
-            sendFile('./index.html', response)
+            sendFile('webserver/index.html', response)
             break
         default:
             response.end('Invalid Request')
