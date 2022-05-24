@@ -19,8 +19,10 @@ var server = http.createServer(function (request, response) {
         switch (request.url) {
             case '/':
                 response.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
-                response.write(loadData())
-                response.end()
+                loadData((result) => {
+                    response.write(result)
+                    response.end()
+                })
                 break
             default:
                 response.end('Invalid Request')
@@ -33,11 +35,11 @@ server.listen(port)
 console.log('Server is running...')
 console.log('localhost:' + port)
 
-function loadData() {
+function loadData(callback) {
     connection.query(sql, function (err, result) {
         if (err) throw err
-        console.log(result)
-        return result.toString()
+        result = JSON.stringify(result.map(v => Object.assign({}, v)))
+        return callback(result)
     });
 }
 
