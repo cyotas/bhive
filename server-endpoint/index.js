@@ -5,8 +5,8 @@ var mysql = require('mysql')
 const port = 3033
 const sql = "SELECT * FROM information"
 
-// sql conneciton
-var conneciton = mysql.createConnection({
+// sql connection
+var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     database: "BIENEN",
@@ -34,14 +34,14 @@ console.log('Server is running...')
 console.log('localhost:' + port)
 
 function loadData() {
-    conneciton.query(sql, function (err, result) {
+    connection.query(sql, function (err, result) {
         if (err) throw err
         console.log(result)
         return result.toString()
     });
 }
 
-conneciton.connect(function (err) {
+connection.connect(function (err) {
     if (err) throw err
     console.log('Connected to database')
 });

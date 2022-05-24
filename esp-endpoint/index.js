@@ -5,8 +5,8 @@ var mysql = require('mysql')
 const port = 4044
 const sql = "INSERT INTO information (in_temp, in_humi, out_temp, out_humi) VALUES ?"
 
-// sql conneciton
-var conneciton = mysql.createConnection({
+// sql connection
+var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     database: "BIENEN",
@@ -34,7 +34,7 @@ var server = http.createServer(function (request, response) {
 
 // store data in db
 function storeData(data) {
-    conneciton.query(sql, [data], function (err) {
+    connection.query(sql, [data], function (err) {
         if (err) throw err
     })
 }
@@ -44,7 +44,7 @@ server.listen(port)
 console.log('Server is running...')
 console.log('port:' + port)
 
-conneciton.connect(function (err) {
+connection.connect(function (err) {
     if (err) throw err
     console.log('Connected to database')
 })
