@@ -10,11 +10,11 @@
     <div id="text"></div>
 </body>
 <script>
-    fetch("http://pi-0:3033")
+    fetch("http://pi-1:3033")
         .then(function (response) {
             return response.json()
         }).then(function (data) {
-            document.getElementById("text").innerText = JSON.stringify(data);
+            document.getElementById("text").innerText = JSON.stringify(data)
         })
 </script>
 
