@@ -1,0 +1,2 @@
+# <img align="left" loading="lazy" src="readme-res/icon.png" height="50"/> Beehive
+Android interface for this project. You can download and install the latest apk [here](https://github.com/eg-kehl-inf/bhive/raw/master/android/app/release/app-release.apk).

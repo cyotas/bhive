@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="app_name">Beehive</string>
+    <string name="temperature_value" translatable="false">%.1f °C</string>
+    <string name="humidity_value" translatable="false">%.1f \%%</string>
+
+    <string name="current">Current</string>
+    <string name="humidity">Humidity</string>
+    <string name="temperature">Temperature</string>
+
+    <string name="no_connection">Ha-Te-Te-Pe?</string>
+    <string name="no_connection_message">Swipe down to refresh.</string>
+    <string name="no_servers">Hmmmmm...</string>
+    <string name="no_servers_message">No beehives added.</string>
+
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="new_hive">New beehive</string>
+    <string name="name">Name</string>
+    <string name="url">Url</string>
+
+    <string name="delete_hive_msg">Delete this hive?</string>
+
+</resources>
