@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <dev.oneuiproject.oneui.widget.Separator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/current" />
+
+    <dev.oneuiproject.oneui.widget.RoundLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oui_background_color"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_oui_flex_mode"
+                android:tint="@color/color_primary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_oui_weather_hot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hive_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_humidity" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hive_humid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/oui_list_divider_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_oui_nature"
+                android:tint="@color/green" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_oui_weather_day" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/outside_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_oui_weather_cloudy" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/outside_humid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/last_time_updated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingHorizontal="24dp"
+        android:text="NaN" />
+
+    <dev.oneuiproject.oneui.widget.Separator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature" />
+
+    <dev.oneuiproject.oneui.widget.RoundLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oui_background_color"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/temp_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
+
+    <dev.oneuiproject.oneui.widget.Separator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity" />
+
+    <dev.oneuiproject.oneui.widget.RoundLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oui_background_color"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/humid_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
+
+</LinearLayout>
