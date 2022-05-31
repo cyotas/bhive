@@ -3,13 +3,13 @@ var mysql = require('mysql')
 
 //constants
 const port = 4044
-const sql = "INSERT INTO information (in_temp, in_humi, out_temp, out_humi) VALUES ?"
+const sql = "INSERT INTO hive_1 (in_temp, in_humi, out_temp, out_humi) VALUES ?"
 
 // sql connection
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    database: "BIENEN",
+    database: "bhive",
     user: "J2",
     password: "J2"
 })
